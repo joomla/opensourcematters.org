@@ -2694,7 +2694,7 @@ footer#main-footer .footer-menu li a{color:#fff;font-size:14px}
 .animated.lightSpeedOut{-webkit-animation-name:lightSpeedOut;-moz-animation-name:lightSpeedOut;-o-animation-name:lightSpeedOut;animation-name:lightSpeedOut;-webkit-animation-timing-function:ease-in;-moz-animation-timing-function:ease-in;-o-animation-timing-function:ease-in;animation-timing-function:ease-in;-webkit-animation-duration:.25s;-moz-animation-duration:.25s;-o-animation-duration:.25s;animation-duration:.25s}
 ul.footer-menu a:link,ul.footer-menu a:visited{padding:4px}
 div.noise-wrapper div.custom{margin-top:-28px}
-ul.footer-social li a span{display:none}
+ul.footer-social li a span{position: absolute;width: 1px;height: 1px;margin: -1px;padding: 0;overflow: hidden;clip: rect(0 0 0 0);border: 0;}
 .dropdown-menu>.active>a,.dropdown-menu>.active>a:focus,.dropdown-menu>.active>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>li>a:hover,.navbar-nav li.active a.dropdown-toggle,.navbar-nav li.active a.dropdown-toggle:focus,.navbar-nav li.active a.dropdown-toggle:hover{color:#4F91CD}
 .navbar-nav>li>.dropdown-menu{margin-top:10px}
 articleBody .separator-shadow-bottom img{width:100%}
