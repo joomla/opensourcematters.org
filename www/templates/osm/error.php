@@ -88,11 +88,6 @@ else
 	?>
 	<link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
 	<style type="text/css">
-		body.site
-		{
-			border-top: 3px solid #666;
-			background-color: #fff;
-		}
 		a
 		{
 			color: #4b6784
@@ -114,14 +109,9 @@ else
 	<![endif]-->
 </head>
 
-<body class="site <?php echo $option
-	. ' view-' . $view
-	. ($layout ? ' layout-' . $layout : ' no-layout')
-	. ($task ? ' task-' . $task : ' no-task')
-	. ($itemid ? ' itemid-' . $itemid : '')
-	. ($params->get('fluidContainer') ? ' fluid' : '');
-?>">
-
+<body class="site">
+<div class='noise-wrapper'>
+  <div class='header-main'>
 	<!-- Body -->
 	<div class="body">
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
@@ -145,6 +135,9 @@ else
 				echo $doc->getBuffer('modules', 'position-1', array('style' => 'none'));
 				?>
 			</div>
+			<div class='separator-shadow-bottom'>
+    			<img alt='' src='<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/shadow-separator-wide-bottom.png'>
+  			</div>
 			<!-- Banner -->
 			<div class="banner">
 				<?php echo $doc->getBuffer('modules', 'banner', array('style' => 'xhtml')); ?>
