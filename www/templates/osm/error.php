@@ -95,7 +95,7 @@ else
 		}
 		a
 		{
-			color: <?php echo $params->get('templateColor');?>;
+			color: #4b6784
 		}
 		.navbar-inner, .nav-list > .active > a, .nav-list > .active > a:hover, .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover, .nav-pills > .active > a, .nav-pills > .active > a:hover
 		{
