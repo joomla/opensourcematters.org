@@ -57,9 +57,7 @@ JHtml::_('stylesheet', 'custom.css', array('version' => 'auto', 'relative' => tr
   <link rel="icon" type="image/png" href="templates/osm/favicons/favicon-32x32.png" sizes="32x32">
   <meta name="msapplication-TileColor" content="#142849">
   <meta name="msapplication-TileImage" content="templates/osm/favicons/mstile-144x144.png">
-<?php unset($doc->_scripts[JURI::root(true) . '/media/jui/js/bootstrap.min.js']);?>
 	<jdoc:include type="head" />
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <link href="templates/osm/css/template.css" rel="stylesheet">
 
 	<!--[if lt IE 9]>
