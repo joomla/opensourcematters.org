@@ -99,39 +99,37 @@ else
 	<![endif]-->
 </head>
 
-<body class="site">
+<body>
 <div class='noise-wrapper'>
   <div class='header-main'>
-	<!-- Body -->
-	<div class="body">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
-			<!-- Header -->
-			<div class="header">
-				<div class="header-inner clearfix">
-					<a class='current navbar-brand' href='/'>
-     			       <img alt='Open Source Matters Inc.' class="osmlogo" src='<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.png'>
-  			        </a>
-					<div class="header-search pull-right">
-						<?php
-						// Display position-0 modules
-						echo $doc->getBuffer('modules', 'position-0', array('style' => 'none'));
-						?>
-					</div>
-				</div>
-			</div>
-			<div class="navigation">
-				<?php
+ 		<div class='container'>
+      		<div class="search-top">
+	  			<?php
+					// Display position-0 modules
+					echo $doc->getBuffer('modules', 'position-0', array('style' => 'none'));
+				?>
+     		</div>
+		<nav class='navbar navbar-default' role='navigation'>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class='navbar-header'>
+          <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+            <span class='sr-only'>Toggle navigation</span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+          <a class='current navbar-brand' href='/'>
+            <img alt='Open Source Matters Inc.' class="osmlogo" src='<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.png'>
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class='collapse navbar-collapse navbar-ex1-collapse'>
+			<?php
 				// Display position-1 modules
 				echo $doc->getBuffer('modules', 'position-1', array('style' => 'none'));
-				?>
-			</div>
-			<div class='separator-shadow-bottom'>
-    			<img alt='' src='<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/shadow-separator-wide-bottom.png'>
-  			</div>
-			<!-- Banner -->
-			<div class="banner">
-				<?php echo $doc->getBuffer('modules', 'banner', array('style' => 'xhtml')); ?>
-			</div>
+			?>
+        </div>
+      	</nav>
 			<div class="row-fluid">
 				<div id="content" class="span12">
 					<!-- Begin Content -->
