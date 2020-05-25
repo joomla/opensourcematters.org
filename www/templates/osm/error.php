@@ -8,10 +8,7 @@
  */
 
 defined('_JEXEC') or die;
-if (($this->error->getCode()) == '404') {
-header('Location: /404.html');
-exit;
-}
+
 
 // Getting params from template
 $params = JFactory::getApplication()->getTemplate(true)->params;
@@ -90,16 +87,11 @@ else
 	}
 	?>
 	<link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-	<?php
-	// Template color
-	if ($params->get('templateColor'))
-	{
-	?>
 	<style type="text/css">
 		body.site
 		{
-			border-top: 3px solid <?php echo $params->get('templateColor');?>;
-			background-color: <?php echo $params->get('templateBackgroundColor');?>
+			border-top: 3px solid #666;
+			background-color: #fff;
 		}
 		a
 		{
@@ -107,7 +99,7 @@ else
 		}
 		.navbar-inner, .nav-list > .active > a, .nav-list > .active > a:hover, .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover, .nav-pills > .active > a, .nav-pills > .active > a:hover
 		{
-			background: <?php echo $params->get('templateColor');?>;
+			background: #fff;
 		}
 		.navbar-inner
 		{
@@ -116,9 +108,7 @@ else
 			box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
 		}
 	</style>
-	<?php
-	}
-	?>
+
 	<!--[if lt IE 9]>
 		<script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
 	<![endif]-->
@@ -201,7 +191,7 @@ else
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
 			<hr />
 			<?php echo $doc->getBuffer('modules', 'footer', array('style' => 'none')); ?>
-			
+
 			<p class="pull-right"><a href="#top" id="back-top"><?php echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); ?></a></p>
 			<p>&copy; <?php echo $sitename; ?> <?php echo date('Y');?></p>
 		</div>
