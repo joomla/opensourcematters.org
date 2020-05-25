@@ -128,9 +128,9 @@ else
 			<!-- Header -->
 			<div class="header">
 				<div class="header-inner clearfix">
-					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
-						<img src="<?php echo $logo;?>" alt="<?php echo $sitename; ?>" />
-					</a>
+					<a class='current navbar-brand' href='/'>
+     			       <img alt='Open Source Matters Inc.' class="osmlogo" src='<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.png'>
+  			        </a>
 					<div class="header-search pull-right">
 						<?php
 						// Display position-0 modules
