@@ -86,3 +86,14 @@ div.mod_search63 input[type="search"]{
 
 
 /* End of Cookie Control */
+
+/* A11y */
+.element-invisible {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
