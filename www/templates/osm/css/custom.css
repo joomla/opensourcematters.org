@@ -97,3 +97,8 @@ div.mod_search63 input[type="search"]{
 	width: 1px;
 	overflow: hidden;
 }
+
+/* Contact Form Privacy Consent */
+label.checkbox input#jform_consentbox0 {
+	width: 20px;
+}
