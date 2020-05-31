@@ -111,27 +111,34 @@ else
 				?>
      		</div>
 		<nav class='navbar navbar-default' role='navigation'>
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class='navbar-header'>
-          <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <a class='current navbar-brand' href='/'>
-            <img alt='Open Source Matters Inc.' class="osmlogo" src='<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.png'>
-          </a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class='collapse navbar-collapse navbar-ex1-collapse'>
-			<?php
-				// Display position-1 modules
-				echo $doc->getBuffer('modules', 'menu', array('style' => 'none'));
-			?>
-        </div>
+        	<!-- Brand and toggle get grouped for better mobile display -->
+        	<div class='navbar-header'>
+          		<button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+            		<span class='sr-only'>Toggle navigation</span>
+            		<span class='icon-bar'></span>
+            		<span class='icon-bar'></span>
+            		<span class='icon-bar'></span>
+          		</button>
+          		<a class='current navbar-brand' href='/'>
+            		<img alt='Open Source Matters Inc.' class="osmlogo" src='<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.png'>
+          		</a>
+        	</div>
+        	<!-- Collect the nav links, forms, and other content for toggling -->
+        	<div class='collapse navbar-collapse navbar-ex1-collapse'>
+				<?php
+					// Display position-1 modules
+					echo $doc->getBuffer('modules', 'menu', array('style' => 'none'));
+				?>
+        	</div>
       	</nav>
-			<div class="row-fluid">
+		</div>
+	</div>
+</div>
+<div class="separator-shadow-bottom">
+    <img alt="" src="https://www.opensourcematters.org/templates/osm/images/shadow-separator-wide-bottom.png">
+</div>
+<div class="area-content">
+			<div class="container">
 				<div id="content" class="span12">
 					<!-- Begin Content -->
 					<h1 class="page-header"><?php echo JText::_('JERROR_LAYOUT_PAGE_NOT_FOUND'); ?></h1>
@@ -168,15 +175,19 @@ else
 			</div>
 		</div>
 	</div>
+</div>
 	<!-- Footer -->
-	<div class="footer">
+	<footer id="main-footer">
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
-			<hr />
-			<?php echo $doc->getBuffer('modules', 'footer', array('style' => 'none')); ?>
-
-			<p>&copy; <?php echo $sitename; ?> <?php echo date('Y');?></p>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="copyright">
+						<?php echo $doc->getBuffer('modules', 'copyright', array('style' => 'none')); ?>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
+	</footer>
 	<?php echo $doc->getBuffer('modules', 'debug', array('style' => 'none')); ?>
 </body>
 </html>
