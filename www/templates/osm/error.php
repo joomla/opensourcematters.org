@@ -127,7 +127,7 @@ else
         <div class='collapse navbar-collapse navbar-ex1-collapse'>
 			<?php
 				// Display position-1 modules
-				echo $doc->getBuffer('modules', 'position-1', array('style' => 'none'));
+				echo $doc->getBuffer('modules', 'menu', array('style' => 'none'));
 			?>
         </div>
       	</nav>
