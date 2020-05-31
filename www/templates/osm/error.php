@@ -107,7 +107,7 @@ else
       		<div class="search-top">
 	  			<?php
 					// Display position-0 modules
-					echo $doc->getBuffer('modules', 'position-0', array('style' => 'none'));
+					echo $doc->getBuffer('modules', 'search', array('style' => 'none'));
 				?>
      		</div>
 		<nav class='navbar navbar-default' role='navigation'>
