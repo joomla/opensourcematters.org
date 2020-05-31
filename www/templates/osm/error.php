@@ -8,10 +8,7 @@
  */
 
 defined('_JEXEC') or die;
-if (($this->error->getCode()) == '404') {
-header('Location: /404.html');
-exit;
-}
+
 
 // Getting params from template
 $params = JFactory::getApplication()->getTemplate(true)->params;
@@ -90,75 +87,49 @@ else
 	}
 	?>
 	<link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-	<?php
-	// Template color
-	if ($params->get('templateColor'))
-	{
-	?>
 	<style type="text/css">
-		body.site
-		{
-			border-top: 3px solid <?php echo $params->get('templateColor');?>;
-			background-color: <?php echo $params->get('templateBackgroundColor');?>
-		}
 		a
 		{
-			color: <?php echo $params->get('templateColor');?>;
-		}
-		.navbar-inner, .nav-list > .active > a, .nav-list > .active > a:hover, .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover, .nav-pills > .active > a, .nav-pills > .active > a:hover
-		{
-			background: <?php echo $params->get('templateColor');?>;
-		}
-		.navbar-inner
-		{
-			-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
-			-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
-			box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
+			color: #4b6784
 		}
 	</style>
-	<?php
-	}
-	?>
+
 	<!--[if lt IE 9]>
 		<script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
 	<![endif]-->
 </head>
 
-<body class="site <?php echo $option
-	. ' view-' . $view
-	. ($layout ? ' layout-' . $layout : ' no-layout')
-	. ($task ? ' task-' . $task : ' no-task')
-	. ($itemid ? ' itemid-' . $itemid : '')
-	. ($params->get('fluidContainer') ? ' fluid' : '');
-?>">
-
-	<!-- Body -->
-	<div class="body">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
-			<!-- Header -->
-			<div class="header">
-				<div class="header-inner clearfix">
-					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
-						<img src="<?php echo $logo;?>" alt="<?php echo $sitename; ?>" />
-					</a>
-					<div class="header-search pull-right">
-						<?php
-						// Display position-0 modules
-						echo $doc->getBuffer('modules', 'position-0', array('style' => 'none'));
-						?>
-					</div>
-				</div>
-			</div>
-			<div class="navigation">
-				<?php
+<body>
+<div class='noise-wrapper'>
+  <div class='header-main'>
+ 		<div class='container'>
+      		<div class="search-top">
+	  			<?php
+					// Display position-0 modules
+					echo $doc->getBuffer('modules', 'position-0', array('style' => 'none'));
+				?>
+     		</div>
+		<nav class='navbar navbar-default' role='navigation'>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class='navbar-header'>
+          <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+            <span class='sr-only'>Toggle navigation</span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+          <a class='current navbar-brand' href='/'>
+            <img alt='Open Source Matters Inc.' class="osmlogo" src='<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.png'>
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class='collapse navbar-collapse navbar-ex1-collapse'>
+			<?php
 				// Display position-1 modules
 				echo $doc->getBuffer('modules', 'position-1', array('style' => 'none'));
-				?>
-			</div>
-			<!-- Banner -->
-			<div class="banner">
-				<?php echo $doc->getBuffer('modules', 'banner', array('style' => 'xhtml')); ?>
-			</div>
+			?>
+        </div>
+      	</nav>
 			<div class="row-fluid">
 				<div id="content" class="span12">
 					<!-- Begin Content -->
@@ -201,8 +172,7 @@ else
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
 			<hr />
 			<?php echo $doc->getBuffer('modules', 'footer', array('style' => 'none')); ?>
-			
-			<p class="pull-right"><a href="#top" id="back-top"><?php echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); ?></a></p>
+
 			<p>&copy; <?php echo $sitename; ?> <?php echo date('Y');?></p>
 		</div>
 	</div>
