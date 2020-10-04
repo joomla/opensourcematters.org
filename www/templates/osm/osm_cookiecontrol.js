@@ -3,20 +3,36 @@ var config = {
 		product: 'PRO_MULTISITE',
 		initialState: "NOTIFY",
 		consentCookieExpiry: 90,
-      		notifyOnce: false,
-		position: "LEFT",
-		theme: "LIGHT",
+      	notifyOnce: false,
+      	mode: 'GDPR',
+      	encodeCookie: true,
+      	subDomains: false,
+		position: "left",
+		theme: "light",
 		layout: "slideout",
+		setInnerHTML: true,
+		rejectButton: false,
 		branding : {
-			fontColor: "#fff",
+			fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
 			fontSizeTitle: "1.1em",
-			fontSizeIntro: "1em",
 			fontSizeHeaders: "1em",
+			fontSizeIntro: "1em",
 			fontSize: "0.95em",
+			fontColor: "#fff",
 			backgroundColor: '#1a3867',
+			notifyFontColor: '#fff',
+			notifyBackgroundColor: '#1a3867',
+			acceptText: '#FFF',
+			acceptBackground: '#51a351',
+			rejectText: '#000',
+			rejectBackground: 'transparent',
+			closeText: '#FFF',
+			closeBackground: '#000',
 			toggleText: '#000',
 			toggleColor: '#ccc',
 			toggleBackground: '#fff',
+			alertText: '#000',
+			alertBackground: '#51a351',
 			buttonIcon: null,
 			buttonIconWidth: "64px",
 			buttonIconHeight: "64px",
@@ -24,14 +40,31 @@ var config = {
 			removeAbout: true
 		},
 		text : {
+			// Main Panel
 		  title: 'This website uses cookies to remember users and understand ways to enhance their experience.',
 		  intro: 'Some cookies are necessary, while other cookies help us improve your experience, while you are navigating through our website. For further information, please visit our <a href="https://www.joomla.org/privacy-policy.html" target="_blank">Privacy Policy</a>.',
+		  acceptSettings: 'I Accept',
 		  acceptRecommended: 'Accept Cookies',
+		  rejectSettings : '',
 		  necessaryTitle: 'Manage Cookie Preferences',
 		  necessaryDescription: '<strong>Strictly Necessary Cookies</strong> are essential for our website to function properly, for instance authenticating logins or serving files, crucial for the core functionality. You can only disable necessary cookies via browser settings but if you do, our website might not be properly functional for your needs.',
-		  notifyDescription: 'We use cookies to optimize site functionality and give you the best possible experience. Learn more.'
-			  },
-		necessaryCookies: ['b7341489b33778906012d5d525781744'],			
+		  // thirdPartyTitle: '',
+		  // thirdPartyDescription: '',
+		  notifyTitle: 'Your choice regarding cookies on this site',
+		  notifyDescription: 'We use cookies to optimize site functionality and give you the best possible experience. Learn more.',
+		  // Vendors
+		  showVendors: 'Show vendors within this category',
+		  thirdPartyCookies: 'This vendor may set third party cookies.',
+		  readMore: 'Read more',
+		},
+		statement : {
+    		description: 'For more information vist our',
+    		name : 'Privacy Statement',
+    		url: 'https://www.joomla.org/privacy-policy.html',
+    		updated : '11/08/2020'
+  		},
+  		sameSiteCookie: true,
+  		sameSiteValue: "Strict",	
 		optionalCookies: [{
 				name: 'performance',
 				label: 'Performance Cookies',
@@ -74,17 +107,5 @@ var config = {
 			],
 			statement: {},
 		};
-	    window.addEventListener("load", function(){
-		  CookieControl.load( config );
-		  var removex = document.getElementById('ccc-notify-dismiss');
-		  if (removex) {
-		    dismissIcon.remove(); // remove the click function if element exists
-		  }
 
-		  //if type is closed the cookie notice is not accepted. if it is notify, then it is accepted.
-		    if (JSON.parse(CookieControl.getCookie('CookieControl')).initialState.type == 'closed' && JSON.parse(CookieControl.getCookie('CookieControl')).initialState.type != 'undefined') {
-		    CookieControl.open();
-		  }else{
-			  console.log('required refresh');
-		  }
-}); 
+	    CookieControl.load( config );

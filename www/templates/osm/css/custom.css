@@ -13,48 +13,22 @@ div.mod_search63 input[type="search"]{
 }
 
 /* CIVIC Control */
-#ccc-notify-dismiss {
-	display: none !important;
-}
-
-#ccc h3 {
-  	font-family: 'Open Sans', sans-serif;
-} 
-
+/*
 #ccc p,
 #ccc #ccc-notify p,
 #ccc .ccc-notify-buttons {
   	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-#ccc[light] button#ccc-icon {
-  	fill: #152845;
-}
-
 #ccc[light] button.ccc-notify-button {
-  	border: 1px solid #62c462;
-  	color: #fff;
+  	color: #fff !important;
   	font-size: 0.95em;
   	border-radius: 0;
 }
 
-#ccc[light] #ccc-notify-accept.ccc-button-solid,
-#ccc button#ccc-recommended-settings {
-  	background: #62c462;
-}
-
-#ccc[light] button.ccc-notify-button:hover {
-  	 border-color: #51a351;
-}
-
-#ccc[light] #ccc-notify-accept.ccc-button-solid:hover,
-#ccc button#ccc-recommended-settings:hover {
-	background: #51a351;
-}
-
 #ccc[light] button.ccc-notify-button:focus,
 #ccc[light] button.ccc-notify-button:active {
-  	border-color: #ccc;
+  	border-color: #ccc !important;
 }
 
 #ccc #ccc-content hr {
@@ -66,7 +40,8 @@ div.mod_search63 input[type="search"]{
 #ccc #ccc-content #ccc-optional-categories .optional-cookie:nth-child(2) hr{
   	opacity: 0.25;
 }
-
+*/
+/* Continue to site text */
 #ccc-optional-categories .optional-cookie:nth-child(3) .checkbox-toggle {
   	display: none;
 }

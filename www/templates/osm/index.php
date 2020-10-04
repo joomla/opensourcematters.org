@@ -199,9 +199,9 @@ JHtml::_('stylesheet', 'custom.css', array('version' => 'auto', 'relative' => tr
 
 	<jdoc:include type="modules" name="debug" style="none" />
       
-      <!-- Cookie Control -->
-<script src="https://cc.cdn.civiccomputing.com/8/cookieControl-8.x.min.js" type="text/javascript"></script>
-<script src="/templates/osm/osm_cookiecontrol.js" type="text/javascript"></script>
-<!-- End of Cookie Control -->
+    <!-- Cookie Control -->
+	<script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.3.1.min.js" type="text/javascript"></script>
+	<script src="/templates/osm/osm_cookiecontrol.js" type="text/javascript"></script>
+	<!-- End of Cookie Control -->
 </body>
 </html>
