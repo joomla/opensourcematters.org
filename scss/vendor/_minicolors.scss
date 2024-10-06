@@ -1,0 +1,30 @@
+// Minicolours
+
+span.minicolors-swatch-color {
+  cursor: pointer;
+}
+
+.minicolors-theme-bootstrap {
+  .minicolors-swatch {
+    width: 36px;
+    height: 36px;
+    > .minicolors-sprite {
+      top: 50%;
+      left: 8px;
+      border-radius: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  .minicolors-input {
+    width: 120px;
+  }
+
+  .rgb {
+    width: 175px;
+  }
+
+  .rgba {
+    width: 220px;
+  }
+}

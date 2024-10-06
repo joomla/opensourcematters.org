@@ -8,10 +8,12 @@
 	<authorEmail>david.hurley@joomla.org / saurabh.shah@opensourcematters.org</authorEmail>
 	<copyright>Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.</copyright>
 	<description>OSM</description>
+	<inheritable>1</inheritable>
 	<files>
 		<filename>component.php</filename>
 		<filename>error.php</filename>
 		<filename>favicon.ico</filename>
+		<filename>joomla.asset.json</filename>
 		<filename>index.php</filename>
 		<filename>templateDetails.xml</filename>
 		<filename>template_preview.png</filename>
@@ -39,6 +41,9 @@
 		<position>featured</position>
       	<position>search</position>
 	</positions>
+	<media destination="templates/site/osm" folder="media">
+		<folder>css</folder>
+	</media>
 	<config>
 		<fields name="params">
 			<fieldset name="advanced">

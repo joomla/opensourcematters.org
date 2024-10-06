@@ -1,0 +1,37 @@
+.nav-tabs.flex-column {
+  margin-bottom: 22px;
+
+  .nav-link {
+    border: var(--#{$prefix}nav-tabs-border-width) solid var(--#{$prefix}nav-tabs-border-color);
+  
+    &:hover {
+      border-color: var(--#{$prefix}nav-tabs-link-hover-border-color);
+    }
+
+    &.disabled, &:disabled {
+      border-color: var(--#{$prefix}nav-tabs-border-color);
+  
+      @include color-scheme(light) {
+        background: #eee;
+      }
+    }
+  }
+
+  @if $enable-rounded {
+    .nav-item:not(:first-child) .nav-link {
+      border-radius: 0;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  @include color-scheme(light) {
+    .nav-tabs.flex-column > li:last-child > a, .nav-tabs > .active:last-child > a {
+      border-bottom: 1px solid #333;
+    }
+  }
+}
+
+.lead {
+  font-family: "Open Sans", sans-serif;
+}

@@ -1,0 +1,17 @@
+// Variables that affect mixins and are therefore set after the bootstrap variables are loaded
+$color-mode-type: media-query;
+$enable-rounded:  false;
+$enable-important-utilities: false;
+$headings-color-dark: $white;
+
+// Prepend our raleway font to the default Bootstrap 5.3 list
+$font-family-sans-serif: Raleway, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+// Prepend our Yanone Kaffeesatz font to the Bootstrap 5.3 list
+$font-family-monospace: "Yanone Kaffeesatz", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$headings-color: #4b6784;
+$link-color: #0099de;
+$headings-font-weight: 200;
+$pagination-active-bg: #0099de;
+$pagination-active-border-color: $pagination-active-bg;

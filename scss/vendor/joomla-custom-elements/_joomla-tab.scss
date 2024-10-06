@@ -1,0 +1,12 @@
+/* Ensures that tabs respect dark mode */
+joomla-tab[view=tabs]>div[role=tablist] {
+  background-color: var(--#{$prefix}secondary-bg-subtle) !important;
+}
+
+joomla-tab button[role=tab] {
+  color: var(--#{$prefix}body-color) !important;
+}
+
+joomla-tab>joomla-tab-element {
+  background-color: var(--bs-light-bg-subtle) !important;
+}

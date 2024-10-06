@@ -1,0 +1,32 @@
+h2.header-lined.nomarg-top {
+  margin-top: 0;
+}
+
+.header-lined {
+  border-bottom: 1px solid #cbdbe6;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.list-checkmarked {
+  list-style: none;
+
+  li {
+    margin-bottom: 20px;
+    position: relative;
+
+    // Potentially extend this from the fontawesome scss files for better future compat with FA6
+    &:before {
+      content: "\f00c";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      display: block;
+      position: absolute;
+      left: -30px;
+    }
+  }
+}
+
+.text-bigger {
+  font-size: 1.1875rem;
+}

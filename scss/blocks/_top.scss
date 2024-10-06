@@ -1,0 +1,29 @@
+.search-top {
+  padding: 0.625rem 0 0;
+  text-align: right;
+}
+
+.separator-shadow-bottom img, .separator-shadow-top img {
+  display: block;
+  width: 100%;
+}
+
+@include media-breakpoint-down(md) {
+  .separator-shadow-bottom {
+    padding-bottom: 10px;
+  }
+}
+
+.header-main .navbar-nav {
+  --#{$prefix}nav-link-padding-x: 1.625rem;
+}
+
+.page-header{
+  padding-bottom: 10px;
+  margin: 5px 0 20px;
+  border-bottom: 1px solid #eee
+}
+
+.navbar-brand .osmlogo {
+  padding-top: 0.625rem;
+}

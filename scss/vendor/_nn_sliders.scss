@@ -1,0 +1,36 @@
+.osm-site {
+  [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button][data-rlta-state=open],
+  [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button][data-rlta-state=opening],
+  [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button] {
+    background-color: var(--bs-light-bg-subtle);
+  }
+
+  [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button]:hover,
+  [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button]:focus {
+    background-color: var(--bs-light);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button]:hover,
+    [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button]:focus,
+    [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button][data-rlta-state=open]:hover,
+    [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button][data-rlta-state=open]:focus,
+    [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button][data-rlta-state=opening]:hover,
+    [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button][data-rlta-state=opening]:focus {
+      background-color: var(--bs-dark-bg-subtle);
+    }
+
+    [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button]:hover,
+    [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button]:focus,
+    [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button][data-rlta-state=open]:hover,
+    [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button][data-rlta-state=open]:focus,
+    [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button][data-rlta-state=opening]:hover,
+    [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=button][data-rlta-state=opening]:focus {
+      background-color: var(--bs-dark);
+    }
+  }
+
+  [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=accordions] > [data-rlta-element=panel], [data-rlta-element=container][data-rlta-state=ready][data-rlta-theme=neutral][data-rlta-type=tabs] > [data-rlta-element=panels] > [data-rlta-element=panel] {
+    background: inherit;
+  }
+}

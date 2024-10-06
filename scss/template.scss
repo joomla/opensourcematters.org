@@ -1,0 +1,49 @@
+/*!
+ * opensourcematters.org site template
+ *
+ * @copyright  Copyright (C) 2005-2024 Open Source Matters, Inc. All rights reserved
+ * @license    GNU General Public License version 2 or later
+ */
+
+// Bootstrap functions
+@import "../node_modules/bootstrap/scss/functions";
+
+// Bootstrap
+@import "variable-init-overrides";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "variable-overrides";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Base Overrides
+@import "base";
+
+// Blocks
+@import "blocks/animations";
+@import "blocks/breadcrumbs";
+@import "blocks/civic_control";
+@import "blocks/features";
+@import "blocks/footer";
+@import "blocks/homepage";
+@import "blocks/legacy";
+@import "blocks/menu";
+@import "blocks/modules";
+@import "blocks/sidebar";
+@import "blocks/top";
+
+// Pages
+@import "pages/com_contact";
+
+// Vendor overrides
+@import "vendor/awesomplete";
+@import "vendor/bootstrap";
+@import "vendor/choices";
+@import "vendor/chosen";
+@import "vendor/dragula";
+@import "vendor/joomla-custom-elements/joomla-alert";
+@import "vendor/joomla-custom-elements/joomla-tab";
+@import "vendor/metismenu";
+@import "vendor/minicolors";
+@import "vendor/nn_sliders";
+@import "vendor/tinymce";
+@import "vendor/icomoon";

@@ -1,0 +1,31 @@
+footer#main-footer {
+  padding: 20px 0;
+  background: #333;
+  margin-top: 0;
+
+  .copyright {
+    color: #CCC;
+    font-size: 12px;
+  }
+
+  .footer-social {
+    list-style: none;
+    padding-left: 0;
+    float: right;
+
+    li {
+      display: inline-block;
+      margin-left: 9px;
+
+      a {
+        color: #DAEFE9;
+        text-decoration: inherit;
+        padding: 15px 25px;
+
+        span {
+          @extend .visually-hidden;
+        }
+      }
+    }
+  }
+}

@@ -9,24 +9,33 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
 
 // Getting params from template
-$params = JFactory::getApplication()->getTemplate(true)->params;
-
-$app = JFactory::getApplication();
-$doc = JFactory::getDocument();
+$app = Factory::getApplication();
+$params = $app->getTemplate(true)->params;
+$doc = Factory::getDocument();
 $this->language = $doc->language;
 $this->direction = $doc->direction;
+$wa = $this->getWebAssetManager();
+
+// Load template stylesheet and javascript
+$wa->useStyle('template.osm.custom.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr'))
+    ->useScript('template.osm');
+
+// Override 'template.active' asset to set correct ltr/rtl dependency
+$wa->registerStyle('template.active', '', [], [], ['template.osm.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr')]);
 
 // Detecting Active Variables
 $option   = $app->input->getCmd('option', '');
 $view     = $app->input->getCmd('view', '');
 $layout   = $app->input->getCmd('layout', '');
 $task     = $app->input->getCmd('task', '');
-$itemid   = $app->input->getCmd('Itemid', '');
-$sitename = $app->getCfg('sitename');
+$itemId   = $app->input->getCmd('Itemid', '');
+$sitename = $app->get('sitename');
 
-if($task == "edit" || $layout == "form" )
+if($task === 'edit' || $layout === 'form' )
 {
 	$fullWidth = 1;
 }
@@ -34,13 +43,6 @@ else
 {
 	$fullWidth = 0;
 }
-
-// Add JavaScript Frameworks
-JHtml::_('bootstrap.framework');
-
-// Add current user information
-$user = JFactory::getUser();
-
 
 // Logo file
 if ($params->get('logoFile'))
@@ -51,91 +53,57 @@ else
 {
 	$logo = $this->baseurl . "/templates/" . $this->template . "/images/osm_logo.png";
 }
+
+$this->setMetaData('viewport', 'width=device-width, initial-scale=1');
+
+// Defer font awesome
+$wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
+
+// Browsers support SVG favicons
+$this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'shortcut icon', 'rel', ['type' => 'image/vnd.microsoft.icon']);
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
+<html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-	<title><?php echo $this->title; ?> <?php echo $this->error->getMessage();?></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="language" content="<?php echo $this->language; ?>" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/custom.css" type="text/css" />
-
-	<?php
-		$debug = JFactory::getConfig()->get('debug_lang');
-		if ((defined('JDEBUG') && JDEBUG) || $debug)
-		{
-	?>
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/cms/css/debug.css" type="text/css" />
-	<?php
-		}
-	?>
-	<?php
-	// If Right-to-Left
-	if ($this->direction == 'rtl')
-	{
-	?>
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/bootstrap-rtl.css" type="text/css" />
-	<?php
-	}
-	// Use of Google Font
-	if ($params->get('googleFont'))
-	{
-	?>
-		<link href='http://fonts.googleapis.com/css?family=<?php echo $params->get('googleFontName');?>' rel='stylesheet' type='text/css'>
-	<?php
-	}
-	?>
-	<link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-	<style type="text/css">
-		a
-		{
-			color: #4b6784
-		}
-	</style>
-
-	<!--[if lt IE 9]>
-		<script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
-	<![endif]-->
+    <jdoc:include type="metas" />
+    <jdoc:include type="styles" />
+    <jdoc:include type="scripts" />
 </head>
 
-<body>
-<div class='noise-wrapper'>
-  <div class='header-main'>
- 		<div class='container'>
+<body class="osm-site <?php echo $option
+    . ' view-' . $view
+    . ($layout ? ' layout-' . $layout : ' no-layout')
+    . ($task ? ' task-' . $task : ' no-task')
+    . ($itemId ? ' itemid-' . $itemId : '');
+?>">
+<div class="noise-wrapper">
+  <div class="header-main">
+ 		<div class="container">
       		<div class="search-top">
 	  			<?php
 					// Display position-0 modules
 					echo $doc->getBuffer('modules', 'search', array('style' => 'none'));
 				?>
      		</div>
-		<nav class='navbar navbar-default' role='navigation'>
-        	<!-- Brand and toggle get grouped for better mobile display -->
-        	<div class='navbar-header'>
-          		<button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
-            		<span class='sr-only'>Toggle navigation</span>
-            		<span class='icon-bar'></span>
-            		<span class='icon-bar'></span>
-            		<span class='icon-bar'></span>
-          		</button>
-          		<a class='current navbar-brand' href='/'>
-            		<img alt='Open Source Matters Inc.' class="osmlogo" src='<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.png'>
-          		</a>
-        	</div>
-        	<!-- Collect the nav links, forms, and other content for toggling -->
-        	<div class='collapse navbar-collapse navbar-ex1-collapse'>
-				<?php
-					// Display position-1 modules
-					echo $doc->getBuffer('modules', 'menu', array('style' => 'none'));
-				?>
-        	</div>
-      	</nav>
+            <nav class="navbar navbar-expand-md" role="navigation">
+                <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#osmNavMenu" aria-controls="osmNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="current navbar-brand float-end" href="/">
+                    <img alt="Open Source Matters Inc." class="osmlogo" src="<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.png">
+                </a>
+                <div id="osmNavMenu" class="collapse navbar-collapse">
+                    <?php
+                        // Display position-1 modules
+                        echo $doc->getBuffer('modules', 'menu', array('style' => 'none'));
+                    ?>
+                </div>
+            </nav>
 		</div>
 	</div>
 </div>
 <div class="separator-shadow-bottom">
-    <img alt="" src="https://www.opensourcematters.org/templates/osm/images/shadow-separator-wide-bottom.png">
+    <img alt="" src="<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/shadow-separator-wide-bottom.png">
 </div>
 <div class="area-content">
 			<div class="container">
@@ -169,6 +137,26 @@ else
 						<blockquote>
 							<span class="label label-inverse"><?php echo $this->error->getCode(); ?></span> <?php echo $this->error->getMessage();?>
 						</blockquote>
+                        <?php if ($this->debug) : ?>
+                            <div>
+                                <?php echo $this->renderBacktrace(); ?>
+                                <?php // Check if there are more Exceptions and render their data as well ?>
+                                <?php if ($this->error->getPrevious()) : ?>
+                                    <?php $loop = true; ?>
+                                    <?php // Reference $this->_error here and in the loop as setError() assigns errors to this property and we need this for the backtrace to work correctly ?>
+                                    <?php // Make the first assignment to setError() outside the loop so the loop does not skip Exceptions ?>
+                                    <?php $this->setError($this->_error->getPrevious()); ?>
+                                    <?php while ($loop === true) : ?>
+                                        <p><strong><?php echo Text::_('JERROR_LAYOUT_PREVIOUS_ERROR'); ?></strong></p>
+                                        <p><?php echo htmlspecialchars($this->_error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></p>
+                                        <?php echo $this->renderBacktrace(); ?>
+                                        <?php $loop = $this->setError($this->_error->getPrevious()); ?>
+                                    <?php endwhile; ?>
+                                    <?php // Reset the main error object to the base error ?>
+                                    <?php $this->setError($this->error); ?>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
 					</div>
 					<!-- End Content -->
 				</div>

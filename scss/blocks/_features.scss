@@ -1,0 +1,68 @@
+.iconed-features {
+  &.lift-on-hover .iconed-feature:hover {
+    transition: transform .4s;
+    transform:translateY(-20px);
+
+    .btn-show-on-parent-hover{
+      margin-bottom:0;
+      bottom: 5px;
+    }
+  }
+
+  .iconed-feature {
+    text-align: center;
+    display: block;
+    padding-bottom: 35px;
+    transition: all .3s linear;
+    position: relative;
+    font-size: 18px;
+    margin: 0 20px;
+    overflow: hidden;
+
+    h4 {
+      border-bottom: 1px solid #c3dcee;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      font-weight: 500;
+      padding-bottom: 10px;
+    }
+
+    .btn-show-on-parent-hover {
+      position: absolute;
+      bottom: 0;
+      margin-bottom: -50px;
+      width: 100%;
+      text-align: center;
+      transition: all .3s linear;
+
+      span {
+        border-bottom: 1px solid #C5D7E8;
+        color: #2D7CC6;
+        font-weight: 500;
+        padding: 5px 10px 3px;
+        font-size: 0.75rem;
+        transition: all .3s ease;
+        display: inline-block;
+        text-transform: uppercase;
+
+        &:hover {
+          text-decoration: none;
+          background-color: #E2F2FF;
+          border-bottom: 1px solid #5597D1;
+        }
+      }
+    }
+
+    .feature-icon-w {
+      color: #70a4d2;
+      font-size: 4.375rem;
+      line-height: 5.625rem;
+      margin-bottom: 1.25rem;
+      transition: all .3s linear;
+    }
+
+    &:hover .feature-icon-w {
+      color: #0d456c;
+    }
+  }
+}

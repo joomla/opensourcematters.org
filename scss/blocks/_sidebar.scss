@@ -1,0 +1,41 @@
+.sidebar .page-header {
+  margin: 0 0 0.625rem;
+  font-size: 1.5rem;
+}
+
+ul.nav.menu-sidemenu {
+  @extend .flex-column;
+
+  li.deeper {
+    @extend .bg-secondary-subtle;
+  }
+
+  li.active a:focus, li.active a:hover {
+    color: var(--#{$prefix}secondary-text-emphasis);
+    text-decoration: underline;
+  }
+
+  ul.mod-menu__sub {
+    @extend .ps-4;
+  }
+
+  li>ul>li>a:before {
+    content: "» ";
+    margin-left: -1rem;
+    padding-right: 0.625rem;
+    text-decoration: none;
+  }
+
+  li.active li:last-child a {
+    margin-bottom: 1rem;
+  }
+
+  ul li.active a {
+    color: var(--#{$prefix}secondary-text-emphasis);
+    font-weight: 500;
+  }
+
+  li.active a {
+    #{$prefix}nav-link-color: #2a6496;
+  }
+}

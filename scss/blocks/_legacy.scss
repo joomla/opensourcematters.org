@@ -1,0 +1,4 @@
+// B/C for any BS2 stuff hidden in articles. Can and should be binned one day after careful review.
+.element-invisible {
+  @extend .visually-hidden;
+}

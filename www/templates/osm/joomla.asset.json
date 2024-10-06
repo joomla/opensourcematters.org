@@ -1,0 +1,91 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "osm",
+  "version": "4.0.0",
+  "description": "This file contains details of the assets used by the OSM template.",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "template.osm.ltr",
+      "description": "The css file to be used when the site is left to right (LTR).",
+      "type": "style",
+      "uri": "template.min.css",
+      "version": "2.0.0",
+      "dependencies": [
+        "fontawesome"
+      ]
+    },
+    {
+      "name": "template.osm.rtl",
+      "description": "The css file to be used when the site is right to left (RTL).",
+      "type": "style",
+      "uri": "template-rtl.min.css",
+      "version": "2.0.0",
+      "dependencies": [
+        "fontawesome"
+      ]
+    },
+    {
+      "name": "template.osm.custom.ltr",
+      "description": "Custom CSS file for individual sites to override styles or inject extra styles when in LTR.",
+      "type": "style",
+      "uri": "custom.css",
+      "weight": 500,
+      "dependencies": [
+        "template.active",
+        "template.active.language"
+      ]
+    },
+    {
+      "name": "template.osm.custom.rtl",
+      "description": "Custom CSS file for individual sites to override styles or inject extra styles when in RTL.",
+      "type": "style",
+      "uri": "custom-rtl.css",
+      "weight": 500,
+      "dependencies": [
+        "template.active",
+        "template.active.language"
+      ]
+    },
+    {
+      "name": "template.active.language",
+      "description": "An asset to allow language specific css, eg 'language/[lang-CODE]/[lang-CODE].css', to use it as a dependency to the active template",
+      "type": "style",
+      "uri": "",
+      "class": "LangActiveAssetItem",
+      "dependencies": [
+        "template.active"
+      ]
+    },
+    {
+      "name": "template.osm",
+      "description": "The file containing the javascript for this template.",
+      "type": "script",
+      "uri": "media/templates/site/osm/js/template.js",
+      "attributes" : {
+        "defer": true
+      }
+    },
+    {
+      "name": "template.osm.ltr",
+      "type": "preset",
+      "dependencies": [
+        "template.osm.ltr#style",
+        "template.osm#script"
+      ]
+    },
+    {
+      "name": "template.osm.rtl",
+      "type": "preset",
+      "dependencies": [
+        "template.osm.rtl#style",
+        "template.osm#script"
+      ]
+    },
+    {
+      "name": "fontawesome",
+      "type": "style",
+      "uri": "system/joomla-fontawesome.min.css"
+    }
+  ]
+}

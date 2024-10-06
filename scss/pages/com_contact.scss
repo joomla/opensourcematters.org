@@ -1,0 +1,42 @@
+.com-contact.contact {
+  .com-contact__form {
+    @extend .card, .bg-secondary-subtle, .mb-5;
+
+    form {
+      @extend .card-body;
+    }
+  }
+
+  $spacingAfterProperties: 180px;
+
+  @include media-breakpoint-up(md) {
+    .dl-horizontal dt {
+      float: left;
+      width: 160px;
+      clear: left;
+      text-align: right;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .dl-horizontal dd {
+      margin-left: $spacingAfterProperties;
+      margin-bottom: 0;
+    }
+
+    .dl-horizontal dd:after, .dl-horizontal dd:before {
+      content :" ";
+      display :table
+    }
+
+    .dl-horizontal dd:after {
+      clear: both
+    }
+
+    .com-contact__miscinfo {
+      // Should match that in the definitions.scss file for a constant width
+      margin-left: $spacingAfterProperties;
+    }
+  }
+}

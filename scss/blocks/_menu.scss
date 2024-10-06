@@ -1,0 +1,7 @@
+.mod-menu {
+  .nav-item {
+    a {
+      @extend .nav-link;
+    }
+  }
+}

@@ -13,7 +13,7 @@ var config = {
 		setInnerHTML: true,
 		rejectButton: false,
 		branding : {
-			fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
+			fontFamily: 'Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif',
 			fontSizeTitle: "1.1em",
 			fontSizeHeaders: "1em",
 			fontSizeIntro: "1em",
@@ -23,7 +23,7 @@ var config = {
 			notifyFontColor: '#fff',
 			notifyBackgroundColor: '#1a3867',
 			acceptText: '#FFF',
-			acceptBackground: '#51a351',
+			acceptBackground: 'var(--bs-success)',
 			rejectText: '#000',
 			rejectBackground: 'transparent',
 			closeText: '#FFF',
@@ -32,7 +32,7 @@ var config = {
 			toggleColor: '#ccc',
 			toggleBackground: '#fff',
 			alertText: '#000',
-			alertBackground: '#51a351',
+			alertBackground: 'var(--bs-success)',
 			buttonIcon: null,
 			buttonIconWidth: "64px",
 			buttonIconHeight: "64px",
@@ -98,14 +98,13 @@ var config = {
 						CookieControl.delete('IDE');
 					},
 				},
-		    {
-			name: 'accept',
-			label: ' ',
-			description: '<a href="" onclick="CookieControl.hide();">Continue to site</a>',
-			toggleType: 'checkbox'
-		    }   
+				{
+					name: 'accept',
+					label: ' ',
+					description: '<a href="" onclick="CookieControl.hide();">Continue to site</a>',
+					toggleType: 'checkbox'
+				}
 			],
-			statement: {},
 		};
 
 	    CookieControl.load( config );

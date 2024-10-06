@@ -9,31 +9,30 @@
 
 defined('_JEXEC') or die;
 
-$app   = JFactory::getApplication();
-$doc   = JFactory::getDocument();
-$this->language = $doc->language;
-$this->direction = $doc->direction;
+$app = JFactory::getApplication();
+$wa  = $this->getWebAssetManager();
 
-// Add JavaScript Frameworks
-JHtml::_('bootstrap.framework');
+$this->setMetaData('viewport', 'width=device-width, initial-scale=1.0');
 
-// Add Stylesheets
-$doc->addStyleSheet('templates/'.$this->template.'/css/template.css');
+// Load template stylesheet and javascript
+$wa->useStyle('template.osm.custom.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr'))
+    ->useScript('template.osm');
 
-// Load optional rtl Bootstrap css and Bootstrap bugfixes
-JHtmlBootstrap::loadCss($includeMaincss = false, $this->direction);
+// Override 'template.active' asset to set correct ltr/rtl dependency
+$wa->registerStyle('template.active', '', [], [], ['template.osm.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr')]);
 
+// Defer font awesome
+$wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
+<html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-<jdoc:include type="head" />
-<!--[if lt IE 9]>
-	<script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
-<![endif]-->
+    <jdoc:include type="metas" />
+    <jdoc:include type="styles" />
+    <jdoc:include type="scripts" />
 </head>
-<body class="contentpane modal">
-	<jdoc:include type="message" />
-	<jdoc:include type="component" />
+<body class="contentpane component <?php echo $this->direction === 'rtl' ? 'rtl' : ''; ?>">
+    <jdoc:include type="message" />
+    <jdoc:include type="component" />
 </body>
 </html>

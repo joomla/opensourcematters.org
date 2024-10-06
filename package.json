@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "engines": {
+    "node": ">=16.19.0",
+    "npm": ">=8.19"
+  },
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "autoprefixer": "^10.4.20",
+    "clean-css": "^5.3.3",
+    "postcss": "^8.4.31",
+    "rtlcss": "^4.3.0",
+    "sass": "^1.79.0",
+    "xml-js": "^1.6.11"
+  },
+  "scripts": {
+    "compile": "node compile.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}

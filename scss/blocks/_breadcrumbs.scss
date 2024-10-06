@@ -1,0 +1,13 @@
+.mod-breadcrumbs__wrapper {
+  .mod-breadcrumbs.breadcrumb {
+    background-color: var(--#{$prefix}secondary-bg-subtle);
+
+    .mod-breadcrumbs__item a {
+      color: var(--#{$prefix}secondary-text-emphasis);
+    }
+
+    .mod-breadcrumbs__divider {
+      @extend .d-none;
+    }
+  }
+}
