@@ -8,5 +8,5 @@ joomla-tab button[role=tab] {
 }
 
 joomla-tab>joomla-tab-element {
-  background-color: var(--bs-light-bg-subtle) !important;
+  background-color: var(--#{$prefix}light-bg-subtle) !important;
 }

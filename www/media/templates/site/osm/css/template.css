@@ -12295,7 +12295,7 @@ ul.nav.menu-sidemenu li.active a {
   min-width: 16rem;
   padding: 0;
   margin-bottom: 0;
-  color: var(--bs-body-color);
+  color: var(--osm-body-color);
   background-color: var(--osm-body-bg);
   border: 1px solid var(--alert-accent-color, transparent);
   border-radius: 0.25rem;
@@ -12420,7 +12420,7 @@ joomla-tab button[role=tab] {
 }
 
 joomla-tab > joomla-tab-element {
-  background-color: var(--bs-light-bg-subtle) !important;
+  background-color: var(--osm-light-bg-subtle) !important;
 }
 
 .metismenu.menu-horizontal {
