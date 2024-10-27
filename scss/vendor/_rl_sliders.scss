@@ -1,0 +1,73 @@
+// Regular Labs Accordions & Tabs, styling. Intention is that this should end up being styled
+// identically to bootstrap tabs when configured to the custom theme (i.e. no core styling), and
+// with stylesheets disabled.
+
+[data-rlta-type="accordions"][data-rlta-state="ready"] {
+  @extend .accordion;
+
+  [data-rlta-element="button"], [data-rlta-element="panel"] {
+    border: var(--#{$prefix}accordion-border-width) solid var(--#{$prefix}accordion-border-color);
+    border-top: 0;
+  }
+
+  [data-rlta-element="button"] {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: var(--#{$prefix}accordion-btn-padding-y) var(--#{$prefix}accordion-btn-padding-x);
+    text-align: left;
+    background-color: var(--#{$prefix}accordion-btn-bg);
+    border-radius: 0;
+    overflow-anchor: none;
+    transition: var(--#{$prefix}accordion-transition);
+
+    &:focus {
+      z-index: 3;
+      outline: 0;
+      box-shadow: var(--#{$prefix}accordion-btn-focus-box-shadow);
+    }
+
+    &::after {
+      flex-shrink: 0;
+      width: var(--#{$prefix}accordion-btn-icon-width);
+      height: var(--#{$prefix}accordion-btn-icon-width);
+      margin-left: auto;
+      content: "";
+      background-image: var(--#{$prefix}accordion-btn-icon);
+      background-repeat: no-repeat;
+      background-size: var(--#{$prefix}accordion-btn-icon-width);
+      transition: var(--#{$prefix}accordion-btn-icon-transition);
+    }
+
+    h3 {
+      color: var(--#{$prefix}accordion-btn-color);
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    &:first-of-type {
+      border-top-left-radius: var(--#{$prefix}accordion-inner-border-radius);
+      border-top-right-radius: var(--#{$prefix}accordion-inner-border-radius);
+      border-top: var(--#{$prefix}accordion-border-width) solid var(--#{$prefix}accordion-border-color);
+    }
+
+    &[data-rlta-state="open"], &[data-rlta-state=opening] {
+      background-color: var(--#{$prefix}accordion-active-bg);
+      box-shadow: inset 0 calc(-1* var(--#{$prefix}accordion-border-width)) 0 var(--#{$prefix}accordion-border-color);
+
+      h3 {
+        color: var(--#{$prefix}accordion-active-color);
+      }
+
+      &::after {
+        background-image: var(--#{$prefix}accordion-btn-active-icon);
+        transform: var(--#{$prefix}accordion-btn-icon-transform);
+      }
+    }
+  }
+
+  [data-rlta-element="panel-content"] {
+    padding: var(--#{$prefix}accordion-body-padding-y) var(--#{$prefix}accordion-body-padding-x);
+  }
+}
