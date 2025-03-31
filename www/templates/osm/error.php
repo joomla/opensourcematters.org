@@ -51,7 +51,7 @@ if ($params->get('logoFile'))
 }
 else
 {
-	$logo = $this->baseurl . "/templates/" . $this->template . "/images/osm_logo.png";
+	$logo = $this->baseurl . "/templates/" . $this->template . "/images/osm_logo.svg";
 }
 
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
@@ -90,7 +90,7 @@ $this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'shor
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="current navbar-brand float-end" href="/">
-                    <img alt="Open Source Matters Inc." class="osmlogo" src="<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.png">
+                    <img class="w-100" alt="Open Source Matters Inc." class="osmlogo" src="<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.svg">
                 </a>
                 <div id="osmNavMenu" class="collapse navbar-collapse">
                     <?php

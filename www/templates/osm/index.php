@@ -112,7 +112,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
       <?php endif; ?>
       <nav class="navbar navbar-expand-md" role="navigation">
       <a class="current navbar-brand float-start" href='/'>
-        <img alt="Open Source Matters Inc." class="osmlogo" src='<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.png'>
+        <img class="w-100" alt="Open Source Matters Inc." class="osmlogo" src="<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.svg">
       </a>
       <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#osmNavMenu" aria-controls="osmNavMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
