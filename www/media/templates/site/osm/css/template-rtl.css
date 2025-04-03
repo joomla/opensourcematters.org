@@ -7323,7 +7323,7 @@ textarea.form-control-lg {
   width: 75%;
 }
 
-.w-100 {
+.w-100, .osm-logo {
   width: 100%;
 }
 
@@ -11885,9 +11885,18 @@ ul.nav.menu-sidemenu li.active a {
   text-align: left;
 }
 
-.separator-shadow-bottom img, .separator-shadow-top img {
-  display: block;
-  width: 100%;
+@media (max-width: 575.98px) {
+  .osm-logo {
+    width: 75%;
+  }
+}
+.separator-shadow-bottom .blue-line {
+  height: 1.3px;
+  background: radial-gradient(ellipse at center, rgb(101, 140, 172) 20%, rgba(101, 140, 172, 0) 80%);
+}
+.separator-shadow-bottom .separator-gradient {
+  height: 8px;
+  background: radial-gradient(at 50% 0, lightgray 20%, transparent 60%);
 }
 
 @media (max-width: 767.98px) {

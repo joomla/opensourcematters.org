@@ -86,12 +86,12 @@ $this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'shor
 				?>
      		</div>
             <nav class="navbar navbar-expand-md" role="navigation">
-                <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#osmNavMenu" aria-controls="osmNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="current navbar-brand float-start" href='/'>
+                    <img class="osm-logo" alt="Open Source Matters Inc." class="osmlogo" src="<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.svg">
+                </a>
+                <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#osmNavMenu" aria-controls="osmNavMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="current navbar-brand float-end" href="/">
-                    <img class="w-100" alt="Open Source Matters Inc." class="osmlogo" src="<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/osm_logo.svg">
-                </a>
                 <div id="osmNavMenu" class="collapse navbar-collapse">
                     <?php
                         // Display position-1 modules
@@ -103,7 +103,8 @@ $this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'shor
 	</div>
 </div>
 <div class="separator-shadow-bottom">
-    <img alt="" src="<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/shadow-separator-wide-bottom.png">
+    <div class="blue-line"></div>
+    <div class="separator-gradient"></div>
 </div>
 <div class="area-content">
 			<div class="container">
