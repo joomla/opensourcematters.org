@@ -128,15 +128,13 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
       <div class="blue-line"></div>
       <div class="separator-gradient"></div>
   </div>
-  <div class="separator-shadow-bottom">
-    <img alt="" src="<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/shadow-separator-wide-bottom.png">
-  </div>
   <?php if($this->countModules('featured')): ?>
   <div class="noise-wrapper">
       <jdoc:include type="modules" name="featured" />
   </div>
   <div class="separator-shadow-bottom">
-     <img src="<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/shadow-separator-wide-bottom.png" alt="">
+      <div class="blue-line"></div>
+      <div class="separator-gradient"></div>
   </div>
   <?php endif; ?>
   
@@ -167,7 +165,8 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
     <?php if($this->countModules('focus_points')): ?>
       <jdoc:include type="modules" name="focus_points" />
       <div class="separator-shadow-bottom bottom-margin">
-        <img alt="" src="<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/shadow-separator-wide-bottom.png" class="w-100">
+        <div class="blue-line"></div>
+        <div class="separator-gradient"></div>
       </div>
     <?php endif; ?>
 
@@ -175,16 +174,18 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
       <div class="row bottom-margin">
         <jdoc:include type="modules" name="special" />
       </div>
-      <div class="separator-shadow-top ">
-        <img alt="" src="<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/shadow-separator-wide-bottom.png" class="w-100">
+      <div class="separator-shadow-top">
+        <div class="blue-line"></div>
+        <div class="separator-gradient"></div>
       </div>
 
     <?php endif; ?>
 
     <?php if($this->countModules('slogan')): ?>    
       <jdoc:include type="modules" name="slogan" />
-    <div class="separator-shadow-bottom ">
-      <img alt="" src="<?php echo JUri::base(); ?>templates/<?php echo $this->template; ?>/images/shadow-separator-wide-bottom.png" class="w-100">
+    <div class="separator-shadow-bottom">
+        <div class="blue-line"></div>
+        <div class="separator-gradient"></div>
     </div>
 
     <?php endif; ?>
