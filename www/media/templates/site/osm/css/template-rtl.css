@@ -11897,15 +11897,15 @@ ul.nav.menu-sidemenu li.active a {
   }
 }
 .separator-shadow-bottom {
-  --osm-separator-color-start: rgba($separator-color, 1);
-  --osm-separator-color-end: rgba($separator-color, 0);
-  --osm-separator-gradient-color: $separator-gradient-color;
+  --osm-separator-color-start: rgba(101, 140, 172, 1);
+  --osm-separator-color-end: rgba(101, 140, 172, 0);
+  --osm-separator-gradient-color: #dee2e6;
 }
 @media (prefers-color-scheme: dark) {
   .separator-shadow-bottom {
-    --osm-separator-color-start: rgba($separator-color-dark, 1);
-    --osm-separator-color-end: rgba($separator-color-dark, 0);
-    --osm-separator-gradient-color: $separator-gradient-color-dark;
+    --osm-separator-color-start: rgba(101, 140, 172, 1);
+    --osm-separator-color-end: rgba(101, 140, 172, 0);
+    --osm-separator-gradient-color: #495057;
   }
 }
 .separator-shadow-bottom .blue-line {

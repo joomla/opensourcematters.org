@@ -14,14 +14,14 @@
 }
 
 .separator-shadow-bottom {
-  --#{$prefix}separator-color-start: rgba($separator-color, 1);
-  --#{$prefix}separator-color-end: rgba($separator-color, 0);
-  --#{$prefix}separator-gradient-color: $separator-gradient-color;
+  --#{$prefix}separator-color-start: rgba(#{to-rgb($separator-color)}, 1);
+  --#{$prefix}separator-color-end: rgba(#{to-rgb($separator-color)}, 0);
+  --#{$prefix}separator-gradient-color: #{$separator-gradient-color};
   @if $enable-dark-mode {
     @include color-mode(dark) {
-      --#{$prefix}separator-color-start: rgba($separator-color-dark, 1);
-      --#{$prefix}separator-color-end: rgba($separator-color-dark, 0);
-      --#{$prefix}separator-gradient-color: $separator-gradient-color-dark;
+      --#{$prefix}separator-color-start: rgba(#{to-rgb($separator-color-dark)}, 1);
+      --#{$prefix}separator-color-end: rgba(#{to-rgb($separator-color-dark)}, 0);
+      --#{$prefix}separator-gradient-color: #{$separator-gradient-color-dark};
     }
   }
   .blue-line {
