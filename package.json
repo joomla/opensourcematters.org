@@ -18,6 +18,6 @@
     "compile": "node compile.js"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.4"
   }
 }

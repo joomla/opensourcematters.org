@@ -15,3 +15,8 @@ $link-color: #0079b0;
 $headings-font-weight: 200;
 $pagination-active-bg: #0099de;
 $pagination-active-border-color: $pagination-active-bg;
+
+$separator-color: #658cac;
+$separator-color-dark: darken(#658cac, 20%);
+$separator-gradient-color: $gray-300;
+$separator-gradient-color-dark: $gray-700;

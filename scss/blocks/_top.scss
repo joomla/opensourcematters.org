@@ -14,13 +14,23 @@
 }
 
 .separator-shadow-bottom {
+  --#{$prefix}separator-color-start: rgba($separator-color, 1);
+  --#{$prefix}separator-color-end: rgba($separator-color, 0);
+  --#{$prefix}separator-gradient-color: $separator-gradient-color;
+  @if $enable-dark-mode {
+    @include color-mode(dark) {
+      --#{$prefix}separator-color-start: rgba($separator-color-dark, 1);
+      --#{$prefix}separator-color-end: rgba($separator-color-dark, 0);
+      --#{$prefix}separator-gradient-color: $separator-gradient-color-dark;
+    }
+  }
   .blue-line {
-    height: 1.3px;
-    background: radial-gradient(ellipse at center, rgba(101, 140, 172, 1) 20%, rgba(101, 140, 172, 0) 80%);
+    height: 2px;
+    background: radial-gradient(ellipse at center, var(--#{$prefix}separator-color-start) 0, var(--#{$prefix}separator-color-end) 80%);
   }
   .separator-gradient {
     height: 8px;
-    background: radial-gradient(at 50% 0, lightgray 20%, transparent 60%);
+    background: radial-gradient(at 50% 0, var(--#{$prefix}separator-gradient-color) 20%, transparent 60%);
   }
 }
 
