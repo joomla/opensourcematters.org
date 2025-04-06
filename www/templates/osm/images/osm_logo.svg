@@ -6,6 +6,11 @@
       .st0 {
         fill: #1d1d1b;
       }
+      @media(prefers-color-scheme:dark){
+        .st0 {
+          fill: #fffeee;
+        }
+      }
 
       .st1 {
         fill: #0384c7;
