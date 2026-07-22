@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
-<extension version="3.1" type="template" client="site">
+<extension type="template" client="site" method="upgrade">
 	<name>OSM</name>
 	<version>1.1</version>
 	<creationDate>3 Aug 2014</creationDate>
@@ -18,12 +18,7 @@
 		<filename>templateDetails.xml</filename>
 		<filename>template_preview.png</filename>
 		<filename>template_thumbnail.png</filename>
-		<folder>css</folder>
 		<folder>html</folder>
-		<folder>images</folder>
-		<folder>img</folder>
-		<folder>js</folder>
-		<folder>less</folder>
 	</files>
 	<positions>
 		<position>banner</position>
@@ -43,6 +38,9 @@
 	</positions>
 	<media destination="templates/site/osm" folder="media">
 		<folder>css</folder>
+		<folder>js</folder>
+		<folder>images</folder>
+		<folder>favicons</folder>
 	</media>
 	<config>
 		<fields name="params">

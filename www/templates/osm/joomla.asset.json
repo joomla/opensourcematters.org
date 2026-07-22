@@ -9,7 +9,7 @@
       "name": "template.osm.ltr",
       "description": "The css file to be used when the site is left to right (LTR).",
       "type": "style",
-      "uri": "template.min.css",
+      "uri": "media/templates/site/osm/css/template.min.css",
       "version": "2.0.0",
       "dependencies": [
         "fontawesome"
@@ -19,7 +19,7 @@
       "name": "template.osm.rtl",
       "description": "The css file to be used when the site is right to left (RTL).",
       "type": "style",
-      "uri": "template-rtl.min.css",
+      "uri": "media/templates/site/osm/css/template-rtl.min.css",
       "version": "2.0.0",
       "dependencies": [
         "fontawesome"
@@ -29,7 +29,7 @@
       "name": "template.osm.custom.ltr",
       "description": "Custom CSS file for individual sites to override styles or inject extra styles when in LTR.",
       "type": "style",
-      "uri": "custom.css",
+      "uri": "vmedia/templates/site/osm/css/custom.css",
       "weight": 500,
       "dependencies": [
         "template.active",
@@ -40,7 +40,7 @@
       "name": "template.osm.custom.rtl",
       "description": "Custom CSS file for individual sites to override styles or inject extra styles when in RTL.",
       "type": "style",
-      "uri": "custom-rtl.css",
+      "uri": "media/templates/site/osm/css/custom-rtl.css",
       "weight": 500,
       "dependencies": [
         "template.active",

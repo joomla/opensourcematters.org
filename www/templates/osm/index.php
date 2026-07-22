@@ -50,8 +50,8 @@ $pageClass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 $wa = $this->getWebAssetManager();
 
 // Load template stylesheet and javascript
-$wa->useStyle('template.osm.custom.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr'))
-    ->useScript('template.osm');
+$wa->usePreset('template.osm.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr'));
+$wa->useStyle('template.osm.custom.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr'));
 
 $templateBaseUrl = $this->baseurl . '/templates/' . $this->template;
 
